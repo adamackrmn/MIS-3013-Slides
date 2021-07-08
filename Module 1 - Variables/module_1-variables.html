@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>MIS 3013 : Module 1 - Variables</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/ou.css">
+    <link rel="stylesheet" href="dist/site.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title with module and what this particular one is over -->
+            <section class="title">
+                <h1>Module 1</h1>
+                <h4>Variables &amp; Expressions</h4>
+            </section>
+
+            <!-- Intro - What is this presentation about / important -->
+            <section>
+                <h2>Variables &amp; Expressions</h2>
+                <p>Every application you will write, no matter how big or how small, will always use these <b style="">two</b> concepts.  We will be learning how to create/initialize, assign and update variables.</p>
+            </section>
+
+            <!-- Topic : Variables -->
+            <section>
+                <section>
+                    <h3>Variables</h3>
+                    <p>
+                        Variables are used to store values of various types.
+                        <div class="sub">Values could come from :</div>
+                        <ul>
+                            <li>The user of the application</li>
+                            <li>A database</li>
+                            <li>A file / web-service</li>
+                            <li>Something that you derived within the application</li>
+                        </ul>
+                        <div>There are two types of variables, Primitive, sometimes referred to as Simple, and Complex</div>
+                    </p>
+                </section>
+                <section>
+                    <h3>Primitive Data Types</h3>
+                    <table>
+                        <tr style="color:white;">
+                            <th>Type</th>
+                            <th>.NET Type</th>
+                            <th>Size</th>
+                        </tr>
+                        <tr>
+                            <td>bool</td>
+                            <td>System.Boolean</td>
+                            <td>0.125-bytes (1-bit)</td>
+                        </tr>
+                        <tr>
+                            <td>char</td>
+                            <td>System.Char</td>
+                            <td>2-bytes (16-bits)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>System.Int32</td>
+                            <td>4-bytes (32-bits)</td>
+                        </tr>
+                        <tr>
+                            <td>double</td>
+                            <td>System.Double</td>
+                            <td>8-bytes (64-bits)</td>
+                        </tr>
+                    </table>
+                    <div>
+                        <p>8 bits = 1 byte</p>
+                        <u><a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types">Microsoft documentation about Simple Data Types</a></u>
+                    </div>
+                </section>
+                <section>
+                    <h3>Integer vs. Floating Point</h3>
+                    <div>
+                        <ul class="no-bullets">
+                            <li>Integers are great for storing whole numbers.</li>
+                            <li><br /></li>
+                            <li>Floating Points are great for storing numbers that need precision.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    TODO:Do a box/storage example
+                </section>
+                <section>
+                    <div class="problem">
+                        Create a variable to hold your age
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="9">
+                         static void Main(string[] args)
+                         {                                    
+                            <span class="fragment">int age; </span>                                              
+                         }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <div class="problem">
+                        Create a variable to hold how much money you have in your bank account
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="">
+                         static void Main(string[] args)
+                         {
+                            <span class="fragment">decimal money; </span>                                              
+                         }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <div class="problem">
+                        Create a variable to hold how your first name
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="">
+                            static void Main(string[] args)
+                            {
+                                <span class="fragment">string firstName; </span>
+                            }
+                        </code>
+                    </pre>
+                </section>
+            </section>
+
+            <!-- Topic : Expressions -->
+            <section>
+                <section>
+                    <h3>Expressions</h3>
+                    <p>
+                        Variables are used to store values of various types.
+                        <div style="">Values could come from :</div>
+                        <ul>
+                            <li>The user of the application</li>
+                            <li>A database</li>
+                            <li>A file / web-service</li>
+                            <li>Something that you derived within the application</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <div class="problem">
+                        <p>Assign how old you are to a variable named age.</p>
+                        <p class="fragment">Update the variable age to your age.</p>
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="9">
+                         static void Main(string[] args)
+                         {                                    
+                            <span class="fragment">age = 17; </span>                                              
+                         }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <div class="problem">
+                        Store the value of your bank account balance into a variable named money.
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="">
+                         static void Main(string[] args)
+                         {
+                            <span class="fragment">decimal money;</span>
+                            <span class="fragment"><span class="fragment highlight-red">money = 750.74; <span class="fragment">//Error: Type mismatch</span></span></span>
+                            <span class="fragment">money = 750.74M;</span>
+                            <span class="fragment">money = (decimal)750.74;</span>
+                            <br />
+                            <span class="fragment">double money;</span>
+                            <span class="fragment">money = 750.74;</span>
+                         }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <div class="problem">
+                        Assign your first name to the variable firstName
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="5">
+                            static void Main(string[] args)
+                            {
+                                <span class="fragment">string firstName;</span>
+                                <span class="fragment">firstName = "Adam";</span>
+                                <span class="fragment">string firstName = new string("Adam");</span>
+                            }
+                        </code>
+                    </pre>
+                </section>
+            </section>
+
+            <!-- Topic : Constants -->
+            <section>
+                <section>
+                    <h3>Constant Variables</h3>
+                    <p>
+                        Constant variables are for when you have a value that is not dynamic (will not change throughout the application).
+                        <div class="sub">
+                            We declare these values as constants because ...
+                            <ul>
+                                <li>Not a literal constant</li>
+                                <li>Adds meta-information</li>
+                                <li>More flexible</li>
+                            </ul>
+                        </div>
+                        <br />
+                        <div class="italic" style="font-size:70%">Example: Our business grows and we go from having a 3 day work week to 5, and maybe eventually 7</div>
+                    </p>
+                </section>
+                <section>
+                    <div class="problem">
+                        Create a constant variable to hold how many inches are in a meter.
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="">
+                            static void Main(string[] args)
+                            {
+                                <span class="fragment fade-out">const double inchesInAMeter = 3.28084 * 12; // ft in a meter * inch in a ft</span>
+                                <span class="fragment fade-in">const double feetInAMeter = 3.28084;</span>
+                                <span class="fragment fade-in">const double inchesInAMeter = feetInAMeter * 12;</span>
+                            }
+                        </code>
+                    </pre>
+                </section>
+            </section>
+
+            <!-- Topic : Constants -->
+            <section>
+                <section>
+                    <h3>I/O <span style="font-size:25%">Input Output</span></h3>
+                    <p>
+                        Every application will have some combination of inputting data and outputting data.
+                        <div class="sub">
+                            <p>Mediums for Input &amp; Output:</p>
+                            <ul>
+                                <span class="fragment highlight-blue">
+                                <li>User </li>
+                                <li>Files</li>
+                                <li>Databases</li>
+                                </span>
+                                <li>Web</li>
+                            </ul>
+                        </div>
+                    </p>
+                </section>
+                <section>
+                    <h3>Output</h3>
+                    <div class="problem">
+                        Hello World! - Everyone should start off writing the Hello World application.  Display the text on the screen
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="">
+                            static void Main(string[] args)
+                            {
+                                Console.WriteLine("Hello World!");
+                            }
+                        </code>
+                    </pre>
+                    <div style="font-size:60%;">'Hello World!' is a series of characters, so we must wrap it with double quotation mark's.  This forms a series of individual characters into a string </div>
+                </section>
+                <section>
+                    <h3>Input from the Console</h3>
+                    <div class="problem">
+                        Ask the user for their name and then greet them!
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="4">
+                            static void Main(string[] args)
+                            {
+                                Console.WriteLine("What is your name? >>");
+                                <span class="fragment">string name = Console.ReadLine();</span>
+                                <span class="fragment fade-in-then-out">Console.WriteLine("Hello " + name + ", nice to meet you!");</span>
+                                <span class="fragment fade-in">Console.WriteLine($"Hello {name}, nice to meet you!");</span>
+                            }
+                        </code>
+                    </pre>
+                    <div style="font-size:60%;">To get input from the user via the Console, we use the <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0">Console</a> class and call the <b class="white">ReadLine</b> method.</div>
+                    <div style="font-size:45%;">The ReadLine method will give us the value of whatever the user typed in, until they hit the return/enter key, and give it to us in the format of a string.  We assign this string value to a variable, 'name', where we can reference it later.</div>
+                </section>
+                <section>
+                    <h3>Input from a File</h3>
+                    <div class="problem">
+                        Get all the contents of the file 'Readme.txt' and output it to the console.
+                    </div>
+                    <pre>
+                    <code data-trim data-noescape data-line-numbers="1,5-6">
+                            using System.IO;
+
+                            static void Main(string[] args)
+                            {
+                                string allContentsOfFile = File.ReadAllText("Readme.txt");
+                                Console.WriteLine(allContentsOfFile);
+                            }
+                        </code>
+                    </pre>
+                    <div style="font-size:60%;">To get input from the user via the Console, we use the <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0">Console</a> class and call the <b class="white">ReadLine</b> method.</div>
+                    <div style="font-size:45%;">The ReadLine method will give us the value of whatever the user typed in, until they hit the return/enter key, and give it to us in the format of a string.  We assign this string value to a variable, 'name', where we can reference it later.</div>
+                </section>
+            </section>
+
+
+            <!-- Key Take-aways  & Conclusion -->
+            <section>
+            </section>
+        </div>
+        <div style="position:absolute; bottom: 0%; left:50%; visibility:hidden;">
+            CC Adam
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+            slideNumber: true,
+            embedded: false
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.title {
+    /*font-size:200%;*/
+}
+
+.italic {
+    font-style: italic;
+}
+
+.sub {
+}
+
+.white{
+    color:white;
+}
+
+.no-bullets {
+    list-style-type: none !important;
+}
